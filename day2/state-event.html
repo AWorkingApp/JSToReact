@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+    <script type="text/babel">
+class Counter extends React.Component {
+
+  constructor(props){
+      super(props);
+      this.state={counter: 0, name: props.name};
+
+      this.bindedHandleClick = this.bindedHandleClick.bind(this);
+  }
+
+  handleClick(e) {
+      this.setState({counter: ++this.state.counter});
+  }
+
+  bindedHandleClick(e){
+      this.setState({counter: ++this.state.counter});
+  }
+
+  render() {
+    return <div>
+       <h2>
+          {this.state.name} counts To: {this.state.counter}
+       </h2>
+       <button onClick={(e)=>{ //  arrow function here helps bind handleClick to this
+           // Try call this twice and see what happens
+          //  this.handleClick(e);
+          this.handleClick();
+       }}>
+        Increment
+       </button> 
+       <br/>
+       <br/>
+       <button onClick={this.handleClick}>
+          Fail to Increment
+        </button>
+       <br/>
+       <br/>
+       <button onClick={this.bindedHandleClick}>
+           Binded Increment
+        </button>
+    </div>;
+  }
+}
+
+ReactDOM.render(<Counter name="John"/>, document.getElementById('root'));
+    </script>
+</html>

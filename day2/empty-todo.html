@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+
+<script type="text/babel">
+
+class TodoApp extends React.Component {
+  constructor(props) {
+    super(props);
+   this.handleChange = this.handleChange.bind(this);    
+   this.handleSubmit = this.handleSubmit.bind(this);    
+
+   this.state = { text: '', todos: ['first'] };
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+
+    let newTodo = this.state.text;
+    this.setState({
+      todos: [newTodo].concat(this.state.todos),
+      text: ''
+    });
+  }
+
+  handleChange(e){
+     this.setState({text: e.target.value});
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>Best TO DO</h3>
+        <form onSubmit={this.handleSubmit}>
+          <input value={this.state.text} onChange={this.handleChange}/>
+          <button>{'Add'}</button>
+        </form>
+        <ToDoList todos={this.state.todos}/>
+      </div>
+    );
+  }
+}
+
+function ToDoList(props){
+  return<ul>
+        {
+          props.todos.map((todo) => (
+            <li key={todo}>{todo}</li>
+          ))
+        }
+        </ul>  
+}
+
+ReactDOM.render(<TodoApp />, document.getElementById('root'));
+    </script>
+</html>
