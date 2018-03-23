@@ -39,7 +39,8 @@
                     <h2>Topics</h2>
                     <ol>
 						<li>About NodeJS</li>
-						<li>Objects in Javascript</li>
+                        <li>Objects in Javascript</li>
+                        <li>Arrays</li>
                         <li>Scope and <span style="text-transform: lowercase;"><i>this</i></span> in javascript</li>
                         <li>Closure</li>
                         <li>Immediately-Invoked Function Expression</li>
@@ -117,6 +118,30 @@ let o = Object.create(Object.prototype);
                     </p>
                 </section>
 
+                <!-- Array in Javascript  -->
+                <section>
+                    <h2>Arrays</h2>
+                     <pre>
+                        <code class="hljs javascript" data-trim contenteditable="">
+// create a array
+let arr = ['a','b'];
+
+// add a value
+arr.push('c');
+
+// remove a value from arr
+arr.splice('a'); // arr is ['b','c'] now
+
+// remove without change index
+delete arr[0] // arr is [undefined, 'c'] now
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>Iteration methods</h2>
+                </section>
+
                 <!-- Scope and <i>this</i> in javascript -->
                 <section>
                     <h2>Scope and <span style="text-transform: lowercase;"><i>this</i></span> in javascript</h2>
@@ -124,7 +149,7 @@ let o = Object.create(Object.prototype);
                         Like java, Javascript has local and global scope
                     </p>
                      <pre>
-                        <code class="hljs" data-trim contenteditable="">
+                        <code class="hljs javascript" data-trim contenteditable="">
                             // car is global while car inside audi is local scope
 
                             let car = "bmw";
@@ -155,7 +180,7 @@ let o = Object.create(Object.prototype);
                 <section>
                     <h2>Figure out <span style="text-transform: lowercase;"><i>this</i></span></h2>
                     <pre>
-                        <code class="hljs" data-trim contenteditable="">
+                        <code class="hljs javascript" data-trim contenteditable="">
 function printName(){ console.log(this.name); }
 
 let mike = { name: 'mike', printName: printName }
