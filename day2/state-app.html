@@ -6,14 +6,22 @@
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <style>
+      .timer {
+        font-size: 3em;
+        margin: 15px;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="text/babel">
-class Timer extends React.Component {
+class Timer extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {secondsElapsed: 0};
+    this.interval = setInterval(() => this.tick(), 1000);
   }
 
   tick() {
@@ -25,17 +33,9 @@ class Timer extends React.Component {
     }));
   }
 
-  componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
   render() {
     return (
-      <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
+      <div className={'timer'}>Seconds Elapsed: {this.state.secondsElapsed}</div>
     );
   }
 }
