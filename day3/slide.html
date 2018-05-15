@@ -20,15 +20,112 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <section>
-            <h2>Intro To Redux</h2>
-            <br/>
-            <p>
-                <small>Created by Chen</small>
-            </p>
-        </section>
-
         <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>Intro To Redux</h2>
+                    <br/>
+                    <p>
+                        <small>Created by Chen</small>
+                    </p>
+                </section>
+        
+                <section>
+                    <h2>Topics</h2>
+                    <ol>
+                        <li>About Flux and Redux</li>
+                        <li>Redux Dataflow</li>
+                        <li>Connect with ReactJS</li>
+                        <li>Redux Middleware</li>
+                        <li>Immutable State</li>
+                        <li>Containers and Components</li>
+                        <li>Async Request</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>
+                        About Flux and Redux
+                    </h2>
+                </section>
+
+                <section>
+                    <h2>
+                        What is Flux?
+                    </h2>
+                    <blockquote>
+                            Flux is the application architecture that Facebook uses for building client-side web applications. It complements React's composable view components by utilizing a unidirectional data flow...
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>What is Flux</h2>
+                    <blockquote>
+                            It's more of a pattern rather than a formal framework, and you can start using Flux immediately without a lot of new code.
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Flux dataflow</h2>
+                    <img height=400 data-src="images/flux.png"/> <br/>
+                    <a href="https://www.youtube.com/watch?v=nYkdrAPrdcw">Original Link</a>
+                </section>
+
+                <section>
+                    <h2>What is Redux</h2>
+                    <blockquote>
+                        Redux is a predictable state container for JavaScript apps.
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>What is Redux</h2>
+                    <blockquote>
+                        It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. 
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Redux vs Flux</h2>
+                    <ul>
+                        <li>Redux does not have the concept of a Dispatcher. Rather use pure function instead.</li>
+                        <li>Redux assumes you never mutate your data.</li>
+                        <li>Redux doesn't care how you store the state—it can be a plain object, an Immutable object, or anything else.</li>
+                        <li>Redux only has one single store for entire application.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Why Redux?</h2>
+                    <p><a href="https://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa">From the creator of Redux</a></p>
+                    <ul>
+                        <li>Redux is able to cut some complexity corners by using functional composition where Flux uses callback registration.</li>
+                        <li>Reducer Composition</li>
+                        <li>Developer Experience</li>
+                        <li>Simplicity</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Connect with ReactJS</h2>
+                </section>
+
+                <section>
+                    <h2>Redux Middleware</h2>
+                </section>
+
+                <section>
+                    <h2>Immutable State</h2>
+                </section>
+
+                <section>
+                    <h2>Containers and Components</h2>
+                </section>
+
+                <section>
+                    <h2>Async Request</h2>
+                </section>
+            </div>
             <div class="share-reveal" style="display: block; position: absolute; bottom: 16px; left: 12%; margin-left: -139px; z-index: 20;">
                 <small>
                     Copyright ©2018 A Working App Inc.
